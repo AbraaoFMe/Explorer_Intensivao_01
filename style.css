@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff: 'Mulish', sans-serif;
+
+    --bg-color-primary: hsla(283, 47%, 97%, 1);
+    --bg-color-secondary: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%);
+    --bg-card: hsl(0, 0%, 100%);
+
+    --fc-title: hsla(320, 69%, 42%, 1);
+    --fc-primary: hsla(244, 38%, 28%, 1);
+    --fc-secondary: hsla(0, 0%, 100%, 1);
+}
+
+.title {
+    color: var(--fc-title);
+    font-weight: 900;
+}
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border-width: 0;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--ff);
+    color: var(--fc-primary);
+}
+
+main {
+    background-color: var(--bg-color-primary);
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.7rem;
+
+    padding: 0 3.2rem 3.5rem;
+}
+
+main .astronaut {
+    background-image: url("./assets/astronaut.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0;
+}
+
+main .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 3.5rem;
+
+    text-align: center;
+}
+
+main .wrapper h1 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+}
+
+main .wrapper button {
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+main .wrapper button:hover {
+    transform: scale(1.2);
+}
+
+section.info {
+    background: var(--bg-color-secondary);
+    padding: 5.3rem 3.9rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+}
+
+section.info .card {
+    background: var(--bg-card);
+    border-radius: 1.9rem;
+
+    padding: 2.6rem;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 3.3rem;
+}
+
+section.info .card .moon {
+    width: 8rem;
+}
+
+section.info .card .text-content-wrapper {
+    max-width: 36.6rem;
+}
+
+section.info .card .text-content-wrapper h2 {
+    font-size: 2.92rem;
+    line-height: 3.7rem;
+    margin-bottom: 2.4rem;
+}
+
+section.contact {
+    background-color: var(--bg-color-primary);
+
+    display: grid;
+}
+
+section.contact .form-wrapper {
+    padding: 7.8rem 4rem 6.5rem;
+    justify-self: center;
+
+    max-width: 60rem;
+    width: 100%;
+}
+
+section.contact .form-wrapper h2 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 4.3rem;
+}
+
+section.contact .form-wrapper form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+section.contact .form-wrapper form .input-wrapper {
+    border: 1.5px solid #312D64;
+    border-radius: 16px;
+    padding: 12px 16px 16px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+
+    gap: 1.2rem;
+}
+
+section.contact .form-wrapper form .input-wrapper:focus-within {
+    outline: 2px solid black;
+}
+
+section.contact .form-wrapper form .input-wrapper input {
+    flex-grow: 1;
+}
+
+section.contact .form-wrapper form .input-wrapper input,
+section.contact .form-wrapper form .input-wrapper textarea {
+    background: transparent;
+    border: none;
+
+    font-size: 1.6rem;
+    line-height: 100%;
+
+    outline: none;
+}
+
+section.contact .form-wrapper form .input-wrapper textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+section.contact .form-wrapper form button {
+    align-self: flex-start;
+    background: var(--bg-color-secondary);
+    border-radius: 1.6rem;
+    padding: 1.6rem;
+
+    border: none;
+
+    color: var(--fc-secondary);
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+    cursor: pointer;
+}
+
+section.contact .form-wrapper form button:hover {
+    filter: brightness(1.2);
+}
+
+section.contact .right-wrapper {
+    display: none;
+}
+
+section.contact .starred_background {
+    background-image: url("./assets/starred_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+
+    width: 100%;
+    /* max-width: 60rem; */
+
+}
+
+footer {
+    padding: 3.2rem 1.6rem 3.2rem;
+    text-align: center;
+
+    background: var(--bg-color-secondary);
+
+    color: var(--fc-secondary);
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-rows: unset;
+        grid-template-columns: 2fr 3fr;
+
+        padding-left: 8rem;
+    }
+
+    main .wrapper {
+        order: -1;
+
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    main .wrapper h1 {
+        font-size: 5rem;
+        line-height: 6.5rem;
+    }
+
+    main .wrapper p {
+        font-size: 2.9rem;
+        line-height: 3.5rem;
+    }
+
+    section.contact {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section.contact .right-wrapper {
+        display: grid;
+        justify-items: end;
+    }
+
+}
+
+@media(min-width: 1440px) {
+    main {
+        padding-left: 9rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main .wrapper h1 {
+        font-size: 5.8rem;
+        line-height: 7.3rem;
+    }
+
+    main .wrapper p {
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+
+    section.info {
+        padding: 6.4rem 11.1rem;
+        flex-wrap: nowrap;
+    }
+
+    section.info .card .text-content-wrapper h2 {
+        font-size: 3.5rem;
+        line-height: 4.4rem;
+    }
+
+    section.info .card .text-content-wrapper p {
+        font-size: 1.93rem;
+        line-height: 2.4rem;
+
+    }
+
+    section.contact .form-wrapper h2 {
+        font-size: 4.2rem;
+    }
+}
